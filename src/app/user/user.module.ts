@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { UserComponent } from './user.component';
 import { RouterModule } from '@angular/router';
-
-
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    UserRoutingModule
   ]
 })
 export class UserModule { }
