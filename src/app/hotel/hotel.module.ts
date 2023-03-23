@@ -14,6 +14,6 @@ import { HotelComponent } from './hotel.component';
   imports: [
     CommonModule,
     HotelRoutingModule
-  ]
+  ],
 })
 export class HotelModule { }
