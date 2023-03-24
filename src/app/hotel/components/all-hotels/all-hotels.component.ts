@@ -11,19 +11,23 @@ import { HotelService } from 'src/app/services/hotel.service';
 export class AllHotelsComponent implements OnInit {
 
   public hotelEntity: HotelEntity[] = [];
-
-  public displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-
+  public displayedColumns: string[] = ['Name', 'Rent par day', 'Maximum capacity', 'Created'];
   public dataSource:MatTableDataSource<HotelEntity> = new MatTableDataSource<HotelEntity>();
 
   constructor(public _hotelService: HotelService) { }
 
   ngOnInit(): void {
+    this.getAllHotelsList();
+  }
+
+  /**
+   * Get all hotels list.
+   */
+  public getAllHotelsList(): void {
     this._hotelService.getAllHotels().subscribe((response)=>{
       this.hotelEntity = response;
       this.dataSource = new MatTableDataSource<HotelEntity>(this.hotelEntity);
-      console.log(this.dataSource)
-
-    })
+    });
   }
+
 }

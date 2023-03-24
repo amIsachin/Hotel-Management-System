@@ -5,6 +5,10 @@ import { HotelRoutingModule } from './hotel-routing.module';
 import { HotelComponent } from './hotel.component';
 
 
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 
 @NgModule({
   declarations: [
@@ -13,7 +17,9 @@ import { HotelComponent } from './hotel.component';
   ],
   imports: [
     CommonModule,
-    HotelRoutingModule
+    HotelRoutingModule,
+    MatTableModule,
+    MatFormFieldModule
   ],
 })
 export class HotelModule { }

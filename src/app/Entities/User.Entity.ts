@@ -1,6 +1,7 @@
+import { AuditableBaseEntity } from "./Auditable.Entity";
 import { HotelEntity } from "./Hotel.Entity";
 
-export interface UserEntity  {
+export interface UserEntity extends AuditableBaseEntity  {
     userId:number,
     name:string,
     gender:string,
