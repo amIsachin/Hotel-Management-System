@@ -1,3 +1,23 @@
 .example-spacer {
     flex: 1 1 auto;
 }
+
+mat-sidenav-container {
+    height: 100vh;
+}
+
+mat-sidenav-container > mat-sidenav a {
+    display: flex;
+    padding: 1.8rem 5rem;
+
+}
+
+/* mat-sidenav-container > mat-sidenav {
+    background-color: primary;
+} */
+
+mat-sidenav-container > mat-sidenav h1 {
+   text-align: center;
+   margin-bottom: 0.5rem;
+   padding: 1.3rem 0;
+}

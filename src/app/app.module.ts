@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HotelModule } from './hotel/hotel.module';
 import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,6 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatTableModule,
     HttpClientModule,
-    
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
