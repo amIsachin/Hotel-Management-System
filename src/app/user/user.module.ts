@@ -5,6 +5,10 @@ import { UserComponent } from './user.component';
 import { RouterModule } from '@angular/router';
 import { UserRoutingModule } from './user-routing.module';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AllUsersComponent,
@@ -13,7 +17,10 @@ import { UserRoutingModule } from './user-routing.module';
   imports: [
     CommonModule,
     RouterModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class UserModule { }

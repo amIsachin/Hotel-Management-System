@@ -15,7 +15,7 @@ export class UserService {
   /**
    * Fetch all user functionality.
    */
-  public getAllHotels(): Observable<UserEntity[]> {
+  public getAllUsers(): Observable<UserEntity[]> {
     return this.httpClient.get<UserEntity[]>(this.baseUrl + 'api/user/getallusers');
   }
 
