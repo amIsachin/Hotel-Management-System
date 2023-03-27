@@ -8,9 +8,10 @@ const routes: Routes = [
   {
     path: 'hotel', component: HotelComponent,
     children: [
-      { path: 'all-hotels', component: AllHotelsComponent}
+      { path: 'all-hotels', component: AllHotelsComponent },
     ]
-  }
+  },
+ 
 ]
 
 @NgModule({

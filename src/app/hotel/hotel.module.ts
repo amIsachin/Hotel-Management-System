@@ -7,19 +7,24 @@ import { HotelComponent } from './hotel.component';
 
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+
+import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.component';
 
 
 
 @NgModule({
   declarations: [
     AllHotelsComponent,
-    HotelComponent
+    HotelComponent,
+    AddNewHotelComponent
   ],
   imports: [
     CommonModule,
     HotelRoutingModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule
   ],
 })
 export class HotelModule { }

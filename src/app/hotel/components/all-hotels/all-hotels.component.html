@@ -1,5 +1,8 @@
 
 <div class="container mt-2">
+
+  <a routerLink="add-hotel" mat-raised-button color="accent" class="mat-elevation-z8 mb-2">Add Hotel</a>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -8,25 +11,25 @@
     <!-- Position Column -->
     <ng-container matColumnDef="Name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.name }} </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="Rent par day">
       <th mat-header-cell *matHeaderCellDef> Rent par day </th>
-      <td mat-cell *matCellDef="let element"> {{element.rentParDay | currency}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.rentParDay | currency }} </td>
     </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="Maximum capacity">
       <th mat-header-cell *matHeaderCellDef> Maximum capacity </th>
-      <td mat-cell *matCellDef="let element"> {{element.maximumCapacity}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.maximumCapacity }} </td>
     </ng-container>
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="Created">
       <th mat-header-cell *matHeaderCellDef> Created </th>
-      <td mat-cell *matCellDef="let element"> {{element.created | date}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.created | date }} </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
