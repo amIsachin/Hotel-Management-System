@@ -8,6 +8,10 @@ import { HotelComponent } from './hotel.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.component';
 
@@ -24,7 +28,10 @@ import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.c
     HotelRoutingModule,
     MatTableModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatDatepickerModule
   ],
 })
 export class HotelModule { }
