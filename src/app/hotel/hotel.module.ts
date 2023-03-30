@@ -14,6 +14,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +32,8 @@ import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.c
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ReactiveFormsModule
   ],
 })
 export class HotelModule { }

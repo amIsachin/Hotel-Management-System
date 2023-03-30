@@ -4,31 +4,33 @@
 </div>
 
 <div class="container mt-2">
-    <form class="mat-elevation-z8 p-2">
+    <form [formGroup]="addNewHotel" (ngSubmit)="addHotel()" class="mat-elevation-z8 p-2">
         <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Name">
+            <input matInput placeholder="Name" formControlName="name">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
     
         <mat-form-field appearance="outline">
             <mat-label>Rent par day</mat-label>
-            <input matInput placeholder="Rent par day">
+            <input matInput placeholder="Rent par day" formControlName="rentParDay">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
     
         <mat-form-field appearance="outline">
             <mat-label>Maximum capacity</mat-label>
-            <input matInput placeholder="Maximum capacity">
+            <input matInput placeholder="Maximum capacity" formControlName="maximumCapacity">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
     
         <mat-form-field appearance="outline">
             <mat-label>Date</mat-label>
-            <input matInput placeholder="Date">
+            <input matInput placeholder="Date" formControlName="created">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
         <button mat-raised-button color="primary" class="mt-2">Add Hotel</button>
     </form>
 </div>
+
+<!-- {{ addNewBook.value | json }} -->
