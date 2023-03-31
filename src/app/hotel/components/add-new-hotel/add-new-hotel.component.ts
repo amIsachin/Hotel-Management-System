@@ -10,11 +10,18 @@ import { HotelService } from 'src/app/services/hotel.service';
 })
 export class AddNewHotelComponent {
 
-  public hotelEntity: HotelEntity;
+  public hotelEntity: HotelEntity = {
+    hotelId:0,
+    name:'',
+    rentParDay:0,
+    maximumCapacity:0,
+    created:new Date
+  };
+
   constructor(private _hotelService:HotelService) { }
 
-  public addNewHotel= new FormGroup({
-    name: new FormControl(''),
+  public addNewHotelForm = new FormGroup({
+    name: new FormControl(),
     rentParDay: new FormControl(),
     maximumCapacity: new FormControl(),
     created: new FormControl()
@@ -22,26 +29,23 @@ export class AddNewHotelComponent {
 
 
 
+  /**
+   * Add new hotel functionaltity.
+   */
   public addHotel(): void {
-    console.log(this.addNewHotel.controls['name'].value)
-    console.log(this.addNewHotel.get('name')?.value)
-    this.hotelEntity.name = this.addNewHotel.controls['name'].value;
-    console.log(this.hotelEntity.name)
+    this.hotelEntity.name = this.addNewHotelForm.controls.name.value;
+    this.hotelEntity.rentParDay = this.addNewHotelForm.value.rentParDay;
+    this.hotelEntity.maximumCapacity = this.addNewHotelForm.value.maximumCapacity;
+    this.hotelEntity.created = this.addNewHotelForm.value.created;
 
-    // this.hotelEntity.name = this.addNewHotel.controls.name.toString();
-    // console.log(this.hotelEntity.name)
-    // this.hotelEntity.rentParDay = this.addNewHotel.value.rentParDay;
-    // this.hotelEntity.maximumCapacity = this.addNewHotel.value.maximumCapacity;
-    // this.hotelEntity.created = this.addNewHotel.value.created;
-
-    // this._hotelService.addNewHotel(this.hotelEntity).subscribe(response => {
-    //   if (response == true){
-
-    //   }
-    //   else {
-
-    //   }
-    // });
+    this._hotelService.addNewHotel(this.hotelEntity).subscribe(response => {
+      if (response == true){
+        alert('success !!');
+      }
+      else {
+        alert('failed !!');
+      }
+    });
   }
 
 }

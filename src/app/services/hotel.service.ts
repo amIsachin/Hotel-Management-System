@@ -13,17 +13,17 @@ export class HotelService {
   constructor(private _httpClient: HttpClient) { }
 
   /**
-   * Get all hotels list functionaltiy.
+   * Get all hotels list service.
    */
   public getAllHotels(): Observable<HotelEntity[]> {
     return this._httpClient.get<HotelEntity[]>(this.baseUrl + 'api/hotel/GetAllHotels')
   }
 
   /**
-   *  Add New hotel functionality.
+   *  Add New hotel service.
    */
   public addNewHotel(hotelEntity:HotelEntity): Observable<boolean> {
-    return this._httpClient.post<boolean>(this.baseUrl + 'api/hotel/AddNewHotel', hotelEntity);
+    return this._httpClient.post<boolean>(this.baseUrl + 'api/hotel/AddNewHotel/', hotelEntity);
   }
 
 }
