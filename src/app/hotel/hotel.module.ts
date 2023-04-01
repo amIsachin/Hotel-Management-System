@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.component';
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     MatDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
 })
 export class HotelModule { }

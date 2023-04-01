@@ -22,15 +22,18 @@
             <input matInput placeholder="Maximum capacity" formControlName="maximumCapacity">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
+
+        <input type="date" formControlName="created">
     
-        <mat-form-field appearance="outline">
+        <!-- <mat-form-field appearance="outline">
             <mat-label>Date</mat-label>
             <input matInput placeholder="Date" formControlName="created">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <button mat-raised-button color="primary" class="mt-2">Add Hotel</button>
     </form>
 </div>
+  
 
-<!-- {{ addNewBook.value | json }} -->
+<!-- {{ addNewHotelForm.value | json }} -->

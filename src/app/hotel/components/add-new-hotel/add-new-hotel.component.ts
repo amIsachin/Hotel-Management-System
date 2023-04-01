@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { HotelEntity } from 'src/app/Entities/Hotel.Entity';
 import { HotelService } from 'src/app/services/hotel.service';
 
@@ -18,7 +19,7 @@ export class AddNewHotelComponent {
     created:new Date
   };
 
-  constructor(private _hotelService:HotelService) { }
+  constructor(private _hotelService:HotelService, private _snackBar: MatSnackBar) { }
 
   public addNewHotelForm = new FormGroup({
     name: new FormControl(),
@@ -40,12 +41,11 @@ export class AddNewHotelComponent {
 
     this._hotelService.addNewHotel(this.hotelEntity).subscribe(response => {
       if (response == true){
-        alert('success !!');
+        this._snackBar.open('Hotel added successfully', undefined, { duration: 3000 })
       }
       else {
-        alert('failed !!');
+        this._snackBar.open('Oop\'s, try again one more time', undefined, { duration: 3000 })
       }
     });
   }
-
 }
