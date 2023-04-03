@@ -23,13 +23,13 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
-        <input type="date" formControlName="created">
-    
-        <!-- <mat-form-field appearance="outline">
-            <mat-label>Date</mat-label>
-            <input matInput placeholder="Date" formControlName="created">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        </mat-form-field> -->
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>Please select date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="created">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
 
         <button mat-raised-button color="primary" class="mt-2">Add Hotel</button>
     </form>
