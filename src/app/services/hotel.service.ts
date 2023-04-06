@@ -26,4 +26,13 @@ export class HotelService {
     return this._httpClient.post<boolean>(this.baseUrl + 'api/hotel/AddNewHotel/', hotelEntity);
   }
 
+  /**
+   * Delete hotel service.
+   * @param hotelId 
+   * @returns 
+   */
+  public deleteHotel(hotelId:number): Observable<boolean> {
+    return this._httpClient.delete<boolean>(this.baseUrl + 'api/hotel/DeleteHotel/'+hotelId);
+  }
+
 }
