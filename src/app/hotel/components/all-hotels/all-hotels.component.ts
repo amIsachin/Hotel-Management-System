@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { HotelDialogComponent } from 'src/app/Dialogs/hotel-dialog/hotel-dialog.component';
 import { HotelEntity } from 'src/app/Entities/Hotel.Entity';
 import { HotelService } from 'src/app/services/hotel.service';
 
@@ -16,7 +18,7 @@ export class AllHotelsComponent implements OnInit {
   public displayedColumns: string[] = ['Name', 'Rent par day', 'Maximum capacity', 'Created', 'Action'];
   public dataSource:MatTableDataSource<HotelEntity> = new MatTableDataSource<HotelEntity>();
 
-  constructor(public _hotelService: HotelService, private router: Router, private _snackBar: MatSnackBar) { }
+  constructor(public _hotelService: HotelService, private router: Router, private _snackBar: MatSnackBar, public _dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getAllHotelsList();
@@ -46,4 +48,11 @@ export class AllHotelsComponent implements OnInit {
     })
   }
 
+  public openDialog() {
+    let dialogRef = this._dialog.open(HotelDialogComponent, {data: {name: 2}});
+
+    dialogRef.afterClosed().subscribe(response => {
+      console.log(`Response is : ${response}`);
+    });
+  }
 }

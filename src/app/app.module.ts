@@ -16,10 +16,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { HotelDialogComponent } from './Dialogs/hotel-dialog/hotel-dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HotelDialogComponent
   ],
   imports: [
     BrowserModule,
