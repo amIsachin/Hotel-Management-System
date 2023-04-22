@@ -36,6 +36,7 @@ export class AllHotelsComponent implements OnInit {
 
   /**
    * Delete hotel.
+   * this method is not used.
    */
   public deleteHotel(hotelId:number) {
     this._hotelService.deleteHotel(hotelId).subscribe(response => {
@@ -48,11 +49,28 @@ export class AllHotelsComponent implements OnInit {
     })
   }
 
-  public openDialog() {
-    let dialogRef = this._dialog.open(HotelDialogComponent, {data: {name: 2}});
+  /**
+   * Delete hotel functionality.
+   * @param hotelId 
+   */
+  public openDialog(hotelId:number) {
 
+    let dialogRef = this._dialog.open(HotelDialogComponent, {data: {name:hotelId}});
+    
     dialogRef.afterClosed().subscribe(response => {
-      console.log(`Response is : ${response}`);
+      if (response > 0) {
+        this._hotelService.deleteHotel(response).subscribe(response => {
+          if(response === true) {
+            this._snackBar.open('Hotel deleted successfully ', undefined, {duration:3000});
+          }
+          else {
+            this._snackBar.open('Oop\'s something wrong please try again', undefined, {duration:3000})
+          }
+        })
+      }
+      else {
+        this._snackBar.open('Hotel not deleted', undefined, {duration:3000})
+      }
     });
   }
 }

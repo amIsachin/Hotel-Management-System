@@ -19,6 +19,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 import { AddNewHotelComponent } from './components/add-new-hotel/add-new-hotel.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
 
 
 
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AllHotelsComponent,
     HotelComponent,
-    AddNewHotelComponent
+    AddNewHotelComponent,
+    UpdateHotelComponent,
   ],
   imports: [
     CommonModule,

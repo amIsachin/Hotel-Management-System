@@ -7,5 +7,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./hotel-dialog.component.css']
 })
 export class HotelDialogComponent {
+  public notDeleted  = false;
   constructor(@Inject(MAT_DIALOG_DATA) public data:any) {}
 }

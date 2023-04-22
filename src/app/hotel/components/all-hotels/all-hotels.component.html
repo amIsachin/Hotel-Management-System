@@ -1,43 +1,44 @@
 
 <div class="container mt-2">
 
-  <a routerLink="/hotel/add-hotel/" mat-raised-button color="accent" class="mat-elevation-z8 mb-2">Add Hotel</a>
+  <a routerLink="/hotel/add-hotel/" mat-raised-button color="accent" class="mat-elevation-z8 mb-2"><mat-icon>add</mat-icon>Add Hotel</a>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
   
-    <!-- Position Column -->
+    <!-- Name Column -->
     <ng-container matColumnDef="Name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name }} </td>
     </ng-container>
   
-    <!-- Name Column -->
+    <!-- Rent par day Column -->
     <ng-container matColumnDef="Rent par day">
       <th mat-header-cell *matHeaderCellDef> Rent par day </th>
       <td mat-cell *matCellDef="let element"> {{element.rentParDay | currency }} </td>
     </ng-container>
   
-    <!-- Weight Column -->
+    <!-- Maximum capacity Column -->
     <ng-container matColumnDef="Maximum capacity">
       <th mat-header-cell *matHeaderCellDef> Maximum capacity </th>
       <td mat-cell *matCellDef="let element"> {{element.maximumCapacity }} </td>
     </ng-container>
   
-    <!-- Symbol Column -->
+    <!-- created Column -->
     <ng-container matColumnDef="Created">
       <th mat-header-cell *matHeaderCellDef> Created </th>
       <td mat-cell *matCellDef="let element"> {{element.created | date }} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
+    <!-- Action Column -->
     <ng-container matColumnDef="Action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element">
-        <a mat-raised-button color="warn" (click)="deleteHotel(element.hotelId)">Delete</a>
-        <button mat-button (click)="openDialog()">Launch dialog</button>
+        <!-- <a mat-raised-button color="warn" (click)="deleteHotel(element.hotelId)">Delete</a> -->
+        <button mat-raised-button color="warn" (click)="openDialog(element.hotelId)"><mat-icon>delete</mat-icon> Delete</button> &nbsp;
+        <button routerLink="/hotel/update-hotel" mat-raised-button color="primary"><mat-icon>edit</mat-icon> Edit</button>
       </td>
     </ng-container>
   

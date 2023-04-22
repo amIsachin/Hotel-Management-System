@@ -1,31 +1,31 @@
 
 <div class="container mt-2">
-    <h1>Add New Hotel</h1>
+    <h1>Update hotel</h1>
 </div>
 
 <div class="container mt-2">
-    <form [formGroup]="addNewHotelForm" (ngSubmit)="addHotel()" class="mat-elevation-z8 p-2">
-        <mat-form-field appearance="outline">
+    <form class="mat-elevation-z8 p-2">
+        <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Name" formControlName="name">
+            <input matInput placeholder="Name">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
     
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="fill">
             <mat-label>Rent par day</mat-label>
-            <input matInput placeholder="Rent par day" formControlName="rentParDay">
+            <input matInput placeholder="Rent par day">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
     
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="fill">
             <mat-label>Maximum capacity</mat-label>
-            <input matInput placeholder="Maximum capacity" formControlName="maximumCapacity">
+            <input matInput placeholder="Maximum capacity">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
-        <mat-form-field color="primary" appearance="outline">
+        <mat-form-field color="primary" appearance="fill">
             <mat-label>Please select date</mat-label>
-            <input matInput [matDatepicker]="picker2" formControlName="created">
+            <input matInput [matDatepicker]="picker2">
             <mat-hint>DD/MM/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2 color="primary"></mat-datepicker>

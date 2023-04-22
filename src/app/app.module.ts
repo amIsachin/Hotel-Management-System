@@ -17,6 +17,7 @@ import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HotelDialogComponent } from './Dialogs/hotel-dialog/hotel-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HotelDialogComponent } from './Dialogs/hotel-dialog/hotel-dialog.compon
     MatTableModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
