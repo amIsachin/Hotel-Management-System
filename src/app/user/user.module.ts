@@ -8,11 +8,18 @@ import { UserRoutingModule } from './user-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AllUsersComponent,
-    UserComponent
+    UserComponent,
+    AddUserComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +27,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     UserRoutingModule,
     MatFormFieldModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatSelectModule
   ]
 })
 export class UserModule { }
