@@ -19,4 +19,13 @@ export class UserService {
     return this.httpClient.get<UserEntity[]>(this.baseUrl + 'api/user/getallusers');
   }
 
+  /**
+   * Add user service.
+   */
+  public addStudent(userEntity:UserEntity): Observable<boolean>{
+    return this.httpClient.post<boolean>(this.baseUrl + 'user/NewUserAsync',userEntity);
+  }
+
+
+
 }

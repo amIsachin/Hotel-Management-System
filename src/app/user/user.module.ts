@@ -14,6 +14,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatInputModule,
     MatDatepickerModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ]
 })
 export class UserModule { }

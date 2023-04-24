@@ -38,7 +38,7 @@
       <td mat-cell *matCellDef="let element">
         <!-- <a mat-raised-button color="warn" (click)="deleteHotel(element.hotelId)">Delete</a> -->
         <button mat-raised-button color="warn" (click)="openDialog(element.hotelId)"><mat-icon>delete</mat-icon> Delete</button> &nbsp;
-        <button routerLink="/hotel/update-hotel" mat-raised-button color="primary"><mat-icon>edit</mat-icon> Edit</button>
+        <a [routerLink]="['/hotel/update-hotel',element.hotelId]" mat-raised-button color="primary"><mat-icon>edit</mat-icon> Edit</a>
       </td>
     </ng-container>
   

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotelDialogComponent } from 'src/app/Dialogs/hotel-dialog/hotel-dialog.component';
 import { HotelEntity } from 'src/app/Entities/Hotel.Entity';
 import { HotelService } from 'src/app/services/hotel.service';

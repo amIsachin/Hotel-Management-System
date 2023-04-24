@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'all-hotels', component: AllHotelsComponent },
       { path: 'add-hotel', component: AddNewHotelComponent },
-      { path: 'update-hotel', component: UpdateHotelComponent }
+      { path: 'update-hotel/:hotelId', component: UpdateHotelComponent }
     ]
   },
  

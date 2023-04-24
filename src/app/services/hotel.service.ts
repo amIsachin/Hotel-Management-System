@@ -35,4 +35,11 @@ export class HotelService {
     return this._httpClient.delete<boolean>(this.baseUrl + 'api/hotel/DeleteHotel/'+hotelId);
   }
 
+  /**
+   * Get hotel by hotel id service.
+   */
+  public getHotelByHotelId(hotelId:number): Observable<HotelEntity> {
+    return this._httpClient.get<HotelEntity>(this.baseUrl + 'api/hotel/GetHotelByHotelId/'+hotelId);
+  }
+
 }
