@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { HotelEntity } from 'src/app/Entities/Hotel.Entity';
 import { UserEntity } from 'src/app/Entities/User.Entity';
 import { HotelService } from 'src/app/services/hotel.service';
@@ -10,7 +12,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-  public id:number = 0;
   public hotelEntity:HotelEntity[] = [];
   public userEntity:UserEntity = {
     userId: 0,
@@ -30,11 +31,10 @@ export class AddUserComponent implements OnInit {
     created: new Date
   }
 
-  constructor (private _hotelService: HotelService, private _userService:UserService) { }
+  constructor (private _hotelService: HotelService, private _userService:UserService, private router: Router, private snackBar: MatSnackBar) { }
    
   ngOnInit(): void {
     this.getAllHotels();
-    console.log(new Date)
   }
 
   /**
@@ -47,13 +47,41 @@ export class AddUserComponent implements OnInit {
   }
 
   /**
+   * Get hotel by hotel id.
+   * @param hotelId
+   * @returns 
+   */
+  public getHotelByHotelId(hotelId:number): HotelEntity {
+    let hotelRecord:HotelEntity = {
+      hotelId:0,
+      name:'',
+      maximumCapacity:0,
+      rentParDay:0,
+      created: new Date
+    }
+
+    this._hotelService.getHotelByHotelId(hotelId).subscribe(response => {
+      hotelRecord = response
+    });
+
+    return hotelRecord;
+  }
+
+  /**
    * Add user functionality.
    */
-  public addUser(userEntity:UserEntity) {
-    console.log(userEntity);
+  public addUser(userEntity:any) {
     userEntity.created = new Date;
     this._userService.addStudent(userEntity).subscribe(response => {
-      console.log(response)
-    })
+      if(response == true) {
+        this.snackBar.open('User added successfully', undefined, {duration: 3000});
+        setTimeout(() => {
+          this.router.navigateByUrl('user/all-users')
+        }, 4000);
+      }
+      else {
+        this.snackBar.open('Oop\'s something wrror please try again');
+      }
+    });
   }
 }

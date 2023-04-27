@@ -23,9 +23,21 @@ export class UserService {
    * Add user service.
    */
   public addStudent(userEntity:UserEntity): Observable<boolean>{
-    return this.httpClient.post<boolean>(this.baseUrl + 'user/NewUserAsync',userEntity);
+    return this.httpClient.post<boolean>(this.baseUrl + 'api/user/NewUser/',userEntity);
   }
 
-
+  public test(user:any): Observable<boolean> {
+    const vm:any = {
+      name:user.name,
+      gender:user.gender,
+      age:user.age,
+      phoneNumber:user.phoneNumber,
+      city:user.city,
+      fromDate:user.fromDate,
+      hotelId:user.hotelId,
+      created:user.created
+    }
+    return this.httpClient.post<boolean>(this.baseUrl + 'api/user/Test/',vm);
+  }
 
 }
