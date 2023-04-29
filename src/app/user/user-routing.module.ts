@@ -4,13 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { UserComponent } from './user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 const routes: Routes = [
   {
     path: 'user', component: UserComponent,
     children: [
       { path: 'all-users', component: AllUsersComponent },
-      { path: 'add-user', component: AddUserComponent }
+      { path: 'add-user', component: AddUserComponent },
+      { path: 'update-user/:userId', component: UpdateUserComponent }
     ]
   }
 ]

@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class AllUsersComponent implements OnInit {
   
   public userEntity: UserEntity[] = [];
-  public displayedColumns: string[] = ['Name', 'Gender', 'Age', 'Phone Number', 'City', 'From Date'];
+  public displayedColumns: string[] = ['Name', 'Gender', 'Age', 'Phone Number', 'City', 'From Date', 'Actions'];
   public dataSource: MatTableDataSource<UserEntity> = new MatTableDataSource<UserEntity>();
 
   constructor(private _userService: UserService) { }

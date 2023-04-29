@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserEntity } from '../Entities/User.Entity';
+import { UserViewModel } from '../Entities/ViewModels/userViewModel';
 
 @Injectable({
   providedIn: 'root'
@@ -26,18 +27,13 @@ export class UserService {
     return this.httpClient.post<boolean>(this.baseUrl + 'api/user/NewUser/',userEntity);
   }
 
-  public test(user:any): Observable<boolean> {
-    const vm:any = {
-      name:user.name,
-      gender:user.gender,
-      age:user.age,
-      phoneNumber:user.phoneNumber,
-      city:user.city,
-      fromDate:user.fromDate,
-      hotelId:user.hotelId,
-      created:user.created
-    }
-    return this.httpClient.post<boolean>(this.baseUrl + 'api/user/Test/',vm);
+  /**
+   * Update user service.
+   */
+  public updateUser(userId:number, userViewModel: UserViewModel): Observable<boolean> {
+    return this.httpClient.put<boolean>(this.baseUrl + 'api/user/UpdateUser/'+ userId, userViewModel);
   }
+
+
 
 }

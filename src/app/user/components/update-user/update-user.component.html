@@ -1,0 +1,59 @@
+
+<div class="container mt-2">
+    <h2>Update user</h2>
+</div>
+
+<div class="container mt-2">
+    <form #myForm="ngForm" (ngSubmit)="upadteUser(myForm.value)" class="mat-elevation-z8 p-2">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" name="name" [(ngModel)]="userViewModel.name">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="Gender" name="gender" [(ngModel)]="userViewModel.gender">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Age" name="age" [(ngModel)]="userViewModel.age">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input matInput placeholder="Phone number" name="phoneNumber" [(ngModel)]="userViewModel.phoneNumber">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="City" name="city" [(ngModel)]="userViewModel.city">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field color="primary" appearance="fill">
+            <mat-label>From Date</mat-label>
+            <input matInput [matDatepicker]="picker2" name="fromDate" [(ngModel)]="userViewModel.fromDate">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Hotel</mat-label>
+            <mat-select name="hotelId" [(ngModel)]="userViewModel.hotelId">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let hotels of hotelEntity" [value]="hotels.hotelId">{{hotels.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary"><mat-icon>edit</mat-icon> Update user</button>
+
+
+    </form>
+</div>

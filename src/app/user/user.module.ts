@@ -18,12 +18,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { FormsModule } from '@angular/forms';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
     AllUsersComponent,
     UserComponent,
-    AddUserComponent
+    AddUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     CommonModule,
