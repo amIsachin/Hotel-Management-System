@@ -34,6 +34,21 @@ export class UserService {
     return this.httpClient.put<boolean>(this.baseUrl + 'api/user/UpdateUser/'+ userId, userViewModel);
   }
 
+  /**
+   * Get user by user id with hotel.
+   */
+  public getUserByUserIdWithHotel(userId:number): Observable<UserEntity> {
+   return this.httpClient.get<UserEntity>(this.baseUrl + 'api/user/GetUserByUserIdWithHotel/'+ userId);
+  }
+
+  /**
+   * Delete user service.
+   * @param userId
+   */
+  public deleteUser(userId:number): Observable<boolean> {
+    return this.httpClient.delete<boolean>(this.baseUrl + 'api/user/DeleteUser/'+ userId);
+  }
+
 
 
 }

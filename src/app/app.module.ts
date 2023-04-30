@@ -18,11 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HotelDialogComponent } from './Dialogs/hotel-dialog/hotel-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UserDeleteDialogComponent } from './Dialogs/user-delete-dialog/user-delete-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HotelDialogComponent
+    HotelDialogComponent,
+    UserDeleteDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -51,7 +51,7 @@ export class AllHotelsComponent implements OnInit {
 
   /**
    * Delete hotel functionality.
-   * @param hotelId 
+   * @param hotelId
    */
   public openDialog(hotelId:number) {
 
