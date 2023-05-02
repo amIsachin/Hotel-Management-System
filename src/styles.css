@@ -22,7 +22,7 @@ mat-form-field {
 }
 
 .space-between {
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .mb-2 {

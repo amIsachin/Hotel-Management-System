@@ -1,0 +1,21 @@
+
+<!-- Card ---------------------------------------
+---- -------------------------------------------------------------------------------->
+<div class="container flex space-between flex-wrap mt-2">
+  <div *ngFor="let hotel of hotelEntity">
+    <mat-card class="example-card mb-2 mat-elevation-z8" style="width: 300px;">
+      <mat-card-header>
+        <mat-card-title>{{hotel.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h2>Name:  {{hotel.name}}</h2>
+        <h3>Rent par day: {{hotel.rentParDay}}</h3>
+        <h3>Maximum capacity: {{hotel.maximumCapacity}}</h3>
+      </mat-card-content>
+      <mat-card-actions>
+        <a routerLink="/booking/book-hotel" mat-stroked-button color="primary">Book now</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
