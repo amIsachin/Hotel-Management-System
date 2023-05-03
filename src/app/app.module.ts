@@ -20,8 +20,8 @@ import { CommonModule } from '@angular/common';
 import { HotelDialogComponent } from './Dialogs/hotel-dialog/hotel-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserDeleteDialogComponent } from './Dialogs/user-delete-dialog/user-delete-dialog.component';
-import { BookingModule } from './booking/booking.module';
 import { HomeModule } from './home/home.module';
+import { BookingModule } from './booking/booking.module';
 
 @NgModule({
   declarations: [
@@ -46,8 +46,8 @@ import { HomeModule } from './home/home.module';
     CommonModule,
     MatDialogModule,
     MatCardModule,
-    BookingModule,
-    HomeModule
+    HomeModule,
+    BookingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

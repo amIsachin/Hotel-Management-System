@@ -1,0 +1,58 @@
+
+<div class="container mt-2">
+    <h1>Book your trip</h1>
+</div>
+
+<div class="container mt-2">
+    <form #myForm="ngForm" (ngSubmit)="bookHotel(myForm.value)" class="mat-elevation-z8 p-2">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Placeholder" name="name" ngModel>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="Placeholder" name="gender" ngModel>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Placeholder" name="age" ngModel>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Placeholder" name="phoneNumber" ngModel>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Placeholder" name="city" ngModel>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field color="primary" appearance="fill">
+            <mat-label>From Date</mat-label>
+            <input matInput [matDatepicker]="picker2" name="fromDate" ngModel>
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Hotel</mat-label>
+            <mat-select name="hotelId" ngModel>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let hotels of hotelEntity" [value]="hotels.hotelId">{{hotels.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <button type="submit" mat-raised-button color="primary"><mat-icon>add</mat-icon> Book trip</button>
+    </form>    
+</div>
+
+<!-- {{myForm.value|json}} -->

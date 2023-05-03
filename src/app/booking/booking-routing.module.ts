@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingComponent } from './booking.component';
-import { BookHotelComponent } from './components/book-hotel/book-hotel.component';
+import { BookNowComponent } from './components/book-now/book-now.component';
 
 const routes: Routes = [
-  {
-    path: 'booking', component: BookingComponent,
-     children: [
-      { path: 'book-hotel', component: BookHotelComponent }
-    ] 
+  { path: 'booking', component: BookingComponent,
+    children: [
+      { path: 'book-now', component: BookNowComponent }
+    ]
   }
-]
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class BookingRoutingModule { }
